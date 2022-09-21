@@ -1,0 +1,208 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "2",
+          "items": [
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": true,
+              "text": "A"
+            },
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": true,
+              "text": "B"
+            },
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": true,
+              "text": "C"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "2",
+          "items": [
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": false,
+              "text": "|"
+            },
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": false,
+              "text": "|"
+            },
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": false,
+              "text": "|"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "2",
+          "items": [
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": false,
+              "text": "1"
+            },
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": false,
+              "text": "1"
+            },
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": false,
+              "text": "1"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "2",
+          "items": [
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": false,
+              "text": "2"
+            },
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": false,
+              "text": "2"
+            },
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": false,
+              "text": "2"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "2",
+          "items": [
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": false,
+              "text": "3"
+            },
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": false,
+              "text": "3"
+            },
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": false,
+              "text": "3"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "2",
+          "items": [
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": false,
+              "text": "4"
+            },
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": false,
+              "text": "4"
+            },
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": false,
+              "text": "4"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "2",
+          "items": [
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": false,
+              "text": "5"
+            },
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": false,
+              "text": "5"
+            },
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": false,
+              "text": "5"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "2",
+          "items": [
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": false,
+              "text": "6"
+            },
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": false,
+              "text": "6"
+            },
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "left",
+              "wrap": false,
+              "text": "6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "Please enter the section with seat number for example  A 1"
+    }
+  ]
+}

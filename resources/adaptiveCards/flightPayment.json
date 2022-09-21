@@ -1,0 +1,12 @@
+{
+    "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "actions": [
+      {
+        "type": "Action.Submit",
+        "title": "Make payment for flight booking",
+        "data": "payment in progress..."
+      }
+    ]
+  }

@@ -53,6 +53,7 @@ adapter.onTurnError = onTurnErrorHandler;
 
 // Listen for incoming requests.
 server.post('/api/messages', (req, res) => {
+    console.log("came here2");
     adapter.processActivity(req, res, async (context) => {
         // Route to main dialog.
         await bot.run(context);

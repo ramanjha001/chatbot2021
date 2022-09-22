@@ -14,6 +14,7 @@ class WelcomeBot extends DialogBot {
     }
 
     async sendWelcomeMessage(turnContext) {
+        console.log("came here 3");
         const { activity } = turnContext;
 
         for (const idx in activity.membersAdded) {

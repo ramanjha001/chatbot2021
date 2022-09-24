@@ -1,20 +1,14 @@
-const path = require("path");
 
-const dotenv = require("dotenv");
+const path = require('path');
 
-const ENV_FILE = path.join(__dirname, ".env");
+const dotenv = require('dotenv');
+
+const ENV_FILE = path.join(__dirname, '.env');
 dotenv.config({ path: ENV_FILE });
 
-const restify = require("restify");
+const restify = require('restify');
 
-const {
-  CloudAdapter,
-  BotFrameworkAdapter,
-  ConversationState,
-  MemoryStorage,
-  UserState,
-  ConfigurationBotFrameworkAuthentication,
-} = require("botbuilder");
+const { BotFrameworkAdapter, ConversationState, MemoryStorage, UserState } = require('botbuilder');
 
 const memoryStorage = new MemoryStorage();
 
@@ -22,52 +16,46 @@ const memoryStorage = new MemoryStorage();
 const userState = new UserState(memoryStorage);
 const conversationState = new ConversationState(memoryStorage);
 
-const { WelcomeBot } = require("./bots/welcomeBot");
+
+const { WelcomeBot } = require('./bots/welcomeBot');
 
 const bot = new WelcomeBot(conversationState, userState);
-
-const botFrameworkAuthentication = new ConfigurationBotFrameworkAuthentication(
-  process.env
-);
-
-const adapter = new CloudAdapter(botFrameworkAuthentication);
 
 // Create HTTP server
 const server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, () => {
-  console.log(`\n${server.name} listening to ${server.url}`);
+    console.log(`\n${ server.name } listening to ${ server.url }`);
 });
 
 // Create adapter.
 // See https://aka.ms/about-bot-adapter to learn more about how bots work.
-// const adapter = new BotFrameworkAdapter({
-//     appId: process.env.MicrosoftAppId,
-//     appPassword: process.env.MicrosoftAppPassword
-// });
+const adapter = new BotFrameworkAdapter({
+    appId: process.env.MicrosoftAppId,
+    appPassword: process.env.MicrosoftAppPassword
+});
 
 // Catch-all for errors.
 const onTurnErrorHandler = async (context, error) => {
-  console.error(`\n Error occurred: ${error}`);
+    console.error(`\n Error occurred: ${ error }`);
 
-  await context.sendTraceActivity(
-    "OnTurnError Trace",
-    `${error}`,
-    "https://www.botframework.com/schemas/error",
-    "TurnError"
-  );
+    await context.sendTraceActivity(
+        'OnTurnError Trace',
+        `${ error }`,
+        'https://www.botframework.com/schemas/error',
+        'TurnError'
+    );
 
-  await context.sendActivity(
-    "Unexpected error occurred, please try in few minutes"
-  );
+    await context.sendActivity('Unexpected error occurred, please try in few minutes');
 };
 
 // Set the onTurnError for the singleton BotFrameworkAdapter.
 adapter.onTurnError = onTurnErrorHandler;
 
 // Listen for incoming requests.
-server.post("/api/messages", (req, res) => {
-  adapter.processActivity(req, res, async (context) => {
-    // Route to main dialog.
-    await bot.run(context);
-  });
+server.post('/api/messages', (req, res) => {
+    console.log("call came 1")
+    adapter.processActivity(req, res, async (context) => {
+        // Route to main dialog.
+        await bot.run(context);
+    });
 });

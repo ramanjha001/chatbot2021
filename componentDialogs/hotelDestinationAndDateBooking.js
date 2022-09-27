@@ -32,7 +32,7 @@ class HotelDestinationAndDateBooking extends ComponentDialog {
 
     async destinationStep(step) {
             await step.context.sendActivity("Please provide destination for Room booking")
-            var reply = MessageFactory.suggestedActions(commonDestinationList);
+            var reply = MessageFactory.suggestedActions(commonDestinationList, "Please provide destination for Room booking");
             await step.context.sendActivity(reply);
             return await step.prompt(TEXT_PROMPT, '')
         }
